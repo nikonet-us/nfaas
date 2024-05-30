@@ -1,0 +1,29 @@
+roles:
+  - name: SPN
+    description: Spine switch
+    content_types:
+      - dcim.device
+  - name: DLF
+    description: Data center leaf switch
+    content_types:
+      - dcim.device
+  - name: FABRIC
+    description: Fabric prefix coniner
+    content_types:
+      - ipam.prefix
+  - name: FABRIC::LOOPBACK0
+    description: Fabric loopback0 prefix coniner
+    content_types:
+      - ipam.prefix
+  - name: FABRIC::LOOPBACK0::SPN
+    description: Fabric loopback0 spine switches prefix coniner
+    content_types:
+      - ipam.prefix
+  - name: FABRIC::LOOPBACK0::DLF
+    description: Fabric loopback0 data center leaf switches prefix coniner
+    content_types:
+      - ipam.prefix
+  - name: FABRIC::LOOPBACK0::ROUTER_ID
+    description: Fabric loopback0 router id prefix coniner
+    content_types:
+      - ipam.prefix

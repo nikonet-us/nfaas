@@ -1,0 +1,4 @@
+statuses:
+  - name: Unused
+    content_types:
+      - dcim.interface

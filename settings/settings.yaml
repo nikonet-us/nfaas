@@ -1,0 +1,10 @@
+settings:
+  bgp_peer_group_templates:
+    - name: VXLAN-LEAF
+      extra_attributes:
+        remote_as: 65000
+        update_source: lo0
+    - name: VXLAN-SPINE
+      extra_attributes:
+        remote_as: 65000
+        update_source: lo0

@@ -1,0 +1,10 @@
+location_types:
+  - name: Site
+    content_types: 
+      - ipam.prefix
+  - name: Data Center
+    parent: Site
+  - name: Building
+    parent: Data Center
+    content_types: 
+      - dcim.device

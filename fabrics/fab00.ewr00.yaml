@@ -1,0 +1,422 @@
+git_file_name: fab00.ewr00.yaml
+github_url: https://github.com/nikonet-us/nfaas/fabrics/fab00.ewr00.yaml
+data_center: Equinix
+site: EWR00
+building: NY1
+fabric_id: FAB00
+fabric_size: small
+prefixes:
+  - prefix: 10.0.0.0/20
+    type: container
+    role: FABRIC
+  - prefix: 10.0.0.0/24
+    type: container
+    role: FABRIC::LOOPBACK0
+  - prefix: 10.0.0.0/28
+    type: container
+    role: FABRIC::LOOPBACK0::SPN
+  - prefix: 10.0.0.16/28
+    type: container
+    role: FABRIC::LOOPBACK0::DLF
+  - prefix: 10.0.0.0/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+  - prefix: 10.0.0.1/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+  - prefix: 10.0.0.16/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+  - prefix: 10.0.0.17/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+  - prefix: 10.0.0.18/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+  - prefix: 10.0.0.19/32
+    type: network
+    role: FABRIC::LOOPBACK0::ROUTER_ID
+devices:
+  - name: SPN00.FAB00.EWR00
+    model: 9364C-GX
+    role: SPN
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.0/32
+      - name: po101
+        type: lag
+      - name: po102
+        type: lag
+      - name: po103
+        type: lag
+      - name: po104
+        type: lag
+      - name: eth1/[1-8]
+        role: Downlink
+      - name: eth1/[9-64]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po101
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po102
+        members:
+          - member: eth1/3
+          - member: eth1/4
+      - name: po103
+        members:
+          - member: eth1/5
+          - member: eth1/6
+      - name: po104
+        members:
+          - member: eth1/7
+          - member: eth1/8
+  - name: SPN01.FAB00.EWR00
+    model: 9364C-GX
+    role: SPN
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.1/32
+      - name: po201
+        type: lag
+      - name: po202
+        type: lag
+      - name: po203
+        type: lag
+      - name: po204
+        type: lag
+      - name: eth1/[1-8]
+        role: Downlink
+      - name: eth1/[9-64]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po201
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po202
+        members:
+          - member: eth1/3
+          - member: eth1/4
+      - name: po203
+        members:
+          - member: eth1/5
+          - member: eth1/6
+      - name: po204
+        members:
+          - member: eth1/7
+          - member: eth1/8
+  - name: DLF00.FAB00.EWR00
+    model: 93108TC-EX
+    role: DLF
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.16/32
+      - name: po101
+        type: lag
+      - name: po201
+        type: lag
+      - name: eth1/[1-4]
+        role: Uplink
+      - name: eth1/[5-54]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po101
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po201
+        members:
+          - member: eth1/3
+          - member: eth1/4
+  - name: DLF01.FAB00.EWR00
+    model: 93108TC-EX
+    role: DLF
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.17/32
+      - name: po102
+        type: lag
+      - name: po202
+        type: lag
+      - name: eth1/[1-4]
+        role: Uplink
+      - name: eth1/[5-54]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po102
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po202
+        members:
+          - member: eth1/3
+          - member: eth1/4
+  - name: DLF02.FAB00.EWR00
+    model: 93108TC-EX
+    role: DLF
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.18/32
+      - name: po103
+        type: lag
+      - name: po203
+        type: lag
+      - name: eth1/[1-4]
+        role: Uplink
+      - name: eth1/[5-54]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po103
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po203
+        members:
+          - member: eth1/3
+          - member: eth1/4
+  - name: DLF03.FAB00.EWR00
+    model: 93108TC-EX
+    role: DLF
+    interfaces:
+      - name: lo0
+        type: virtual
+        ip_addresses:
+          - ip_address: 10.0.0.19/32
+      - name: po104
+        type: lag
+      - name: po204
+        type: lag
+      - name: eth1/[1-4]
+        role: Uplink
+      - name: eth1/[5-54]
+        status: Unused
+        enabled: False
+    lags:
+      - name: po104
+        members:
+          - member: eth1/1
+          - member: eth1/2
+      - name: po204
+        members:
+          - member: eth1/3
+          - member: eth1/4
+connections:
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/1
+    b_device: DLF00.FAB00.EWR00
+    b_interface: eth1/1
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/2
+    b_device: DLF00.FAB00.EWR00
+    b_interface: eth1/2
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/3
+    b_device: DLF01.FAB00.EWR00
+    b_interface: eth1/1
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/4
+    b_device: DLF01.FAB00.EWR00
+    b_interface: eth1/2
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/5
+    b_device: DLF02.FAB00.EWR00
+    b_interface: eth1/1
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/6
+    b_device: DLF02.FAB00.EWR00
+    b_interface: eth1/2
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/7
+    b_device: DLF03.FAB00.EWR00
+    b_interface: eth1/1
+  - a_device: SPN00.FAB00.EWR00
+    a_interface: eth1/8
+    b_device: DLF03.FAB00.EWR00
+    b_interface: eth1/2
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/1
+    b_device: DLF00.FAB00.EWR00
+    b_interface: eth1/3
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/2
+    b_device: DLF00.FAB00.EWR00
+    b_interface: eth1/4
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/3
+    b_device: DLF01.FAB00.EWR00
+    b_interface: eth1/3
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/4
+    b_device: DLF01.FAB00.EWR00
+    b_interface: eth1/4
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/5
+    b_device: DLF02.FAB00.EWR00
+    b_interface: eth1/3
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/6
+    b_device: DLF02.FAB00.EWR00
+    b_interface: eth1/4
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/7
+    b_device: DLF03.FAB00.EWR00
+    b_interface: eth1/3
+  - a_device: SPN01.FAB00.EWR00
+    a_interface: eth1/8
+    b_device: DLF03.FAB00.EWR00
+    b_interface: eth1/4
+bgp_autonomous_systems:
+  - asn: 65000
+    routing_instances:
+    - device: SPN00.FAB00.EWR00
+      router_id: 10.0.0.0/32
+      peer_groups:
+        - name: SPN00.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+          peer_group_template: VXLAN-LEAF
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                route_reflector_client: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+                route_reflector_client: true
+    - device: SPN01.FAB00.EWR00
+      router_id: 10.0.0.1/32
+      peer_groups:
+        - name: SPN01.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+          peer_group_template: VXLAN-LEAF
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                route_reflector_client: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+                route_reflector_client: true
+    - device: DLF00.FAB00.EWR00
+      router_id: 10.0.0.16/32
+      peer_groups:
+        - name: DLF00.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+          peer_group_template: VXLAN-SPINE
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+    - device: DLF01.FAB00.EWR00
+      router_id: 10.0.0.17/32
+      peer_groups:
+        - name: DLF01.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+          peer_group_template: VXLAN-SPINE
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+    - device: DLF02.FAB00.EWR00
+      router_id: 10.0.0.18/32
+      peer_groups:
+        - name: DLF02.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+          peer_group_template: VXLAN-SPINE
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+    - device: DLF03.FAB00.EWR00
+      router_id: 10.0.0.19/32
+      peer_groups:
+        - name: DLF03.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+          peer_group_template: VXLAN-SPINE
+          source_interface: lo0
+          address_families:
+            - afi_safi: ipv4_unicast
+              extra_attributes:
+                send_community_extended: true
+                soft_reconfiguration_inbound: true
+            - afi_safi: l2_evpn
+              extra_attributes:
+                send_community: true
+                send_community_extended: true
+    peerings:
+      - a_endpoint_device: SPN00.FAB00.EWR00
+        a_endpoint_peer_group: SPN00.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF00.FAB00.EWR00
+        z_endpoint_peer_group: DLF00.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN00.FAB00.EWR00
+        a_endpoint_peer_group: SPN00.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF01.FAB00.EWR00
+        z_endpoint_peer_group: DLF01.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN00.FAB00.EWR00
+        a_endpoint_peer_group: SPN00.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF02.FAB00.EWR00
+        z_endpoint_peer_group: DLF02.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN00.FAB00.EWR00
+        a_endpoint_peer_group: SPN00.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF03.FAB00.EWR00
+        z_endpoint_peer_group: DLF03.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN01.FAB00.EWR00
+        a_endpoint_peer_group: SPN01.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF00.FAB00.EWR00
+        z_endpoint_peer_group: DLF00.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN01.FAB00.EWR00
+        a_endpoint_peer_group: SPN01.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF01.FAB00.EWR00
+        z_endpoint_peer_group: DLF01.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN01.FAB00.EWR00
+        a_endpoint_peer_group: SPN01.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF02.FAB00.EWR00
+        z_endpoint_peer_group: DLF02.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active
+      - a_endpoint_device: SPN01.FAB00.EWR00
+        a_endpoint_peer_group: SPN01.FAB00.EWR00::PeerGroup::VXLAN_LEAF
+        z_endpoint_device: DLF03.FAB00.EWR00
+        z_endpoint_peer_group: DLF03.FAB00.EWR00::PeerGroup::VXLAN_SPINE
+        status: Active

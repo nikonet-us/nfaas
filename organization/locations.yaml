@@ -1,0 +1,12 @@
+locations:
+  - name: EWR00
+    location_type: Site
+    status: Active
+  - name: Equinix
+    location_type: Data Center
+    parent: EWR00
+    status: Active
+  - name: NY1
+    location_type: Building
+    parent: Equinix
+    status: Active

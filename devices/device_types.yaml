@@ -1,0 +1,27 @@
+device_types:
+  - manufacturer: Cisco
+    device_family: Nexus
+    model: 93108TC-EX
+    part_number: N9K-C93108TC-EX
+    u_height: 1
+    is_full_depth: true
+    interface_templates:
+      - name: mgmt0
+        type: 1000base-t
+        mgmt_only: true
+      - name: eth1/[1-6]
+        type: 100gbase-x-qsfp28
+      - name: eth1/[7-54]
+        type: 10gbase-t
+  - manufacturer: Cisco
+    device_family: Nexus
+    model: 9364C-GX
+    part_number: N9K-C9364C-GX
+    u_height: 2
+    is_full_depth: true
+    interface_templates:
+      - name: mgmt0
+        type: 1000base-t
+        mgmt_only: true
+      - name: eth1/[1-64]
+        type: 100gbase-x-qsfp28
