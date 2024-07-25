@@ -11,6 +11,10 @@ roles:
     description: Fabric prefix coniner
     content_types:
       - ipam.prefix
+  - name: FABRIC::MGMT
+    description: Fabric management prefix
+    content_types:
+      - ipam.prefix
   - name: FABRIC::LOOPBACK0
     description: Fabric loopback0 prefix coniner
     content_types:
