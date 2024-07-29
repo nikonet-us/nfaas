@@ -43,6 +43,7 @@ devices:
   - name: SPN00.FAB00.EWR00
     model: 9364C-GX
     role: SPN
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
@@ -85,6 +86,7 @@ devices:
   - name: SPN01.FAB00.EWR00
     model: 9364C-GX
     role: SPN
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
@@ -127,6 +129,7 @@ devices:
   - name: DLF00.FAB00.EWR00
     model: 93108TC-EX
     role: DLF
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
@@ -157,6 +160,7 @@ devices:
   - name: DLF01.FAB00.EWR00
     model: 93108TC-EX
     role: DLF
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
@@ -187,6 +191,7 @@ devices:
   - name: DLF02.FAB00.EWR00
     model: 93108TC-EX
     role: DLF
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
@@ -217,6 +222,7 @@ devices:
   - name: DLF03.FAB00.EWR00
     model: 93108TC-EX
     role: DLF
+    nso_ned_id: NX-OS-nc-10.3
     interfaces:
       - name: mgmt0
         ip_addresses:
