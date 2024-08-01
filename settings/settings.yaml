@@ -1,4 +1,10 @@
 settings:
+  custom_fields:
+    - label: NSO NED ID
+      content_types:
+       - dcim.device
+      custom_field_choices:
+        - value: NX-OS-nc-10.3
   bgp_peer_group_templates:
     - name: VXLAN-LEAF
       extra_attributes:
