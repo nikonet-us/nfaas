@@ -5,6 +5,9 @@ site: EWR00
 building: NY1
 fabric_id: FAB00
 fabric_size: small
+vlans:
+  - vid: 1
+    name: Default
 prefixes:
   - prefix: 192.168.2.0/24
     type: network
@@ -71,6 +74,8 @@ devices:
       - name: eth1/[9-64]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po101
         members:
@@ -119,6 +124,8 @@ devices:
       - name: eth1/[9-64]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po201
         members:
@@ -161,6 +168,8 @@ devices:
       - name: eth1/[5-54]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po101
         members:
@@ -195,6 +204,8 @@ devices:
       - name: eth1/[5-54]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po102
         members:
@@ -229,6 +240,8 @@ devices:
       - name: eth1/[5-54]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po103
         members:
@@ -263,6 +276,8 @@ devices:
       - name: eth1/[5-54]
         status: Unused
         enabled: False
+        mode: Access
+        untagged_vlan: 1
     lags:
       - name: po104
         members:
